@@ -15,6 +15,7 @@ int main() {
     printf("Frase criptografada: %s\n", sentence);   
     return 0;
 }
+
 void encrypt(char *sentence) {
     for (int i = 0; sentence[i] != '\0'; i++) {
         char c = tolower(sentence[i]);
