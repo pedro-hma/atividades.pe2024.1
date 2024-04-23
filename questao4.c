@@ -14,9 +14,9 @@ int main() {
     // Remover o caractere de nova linha adicionado pelo fgets
     frase[strcspn(frase, "\n")] = '\0';
     
-    int vowels = count_vowels(frase);
+    int vogais = qtd_vogais(frase);
     
-    printf("A quantidade de vogais na frase é: %d\n", vowels);
+    printf("A quantidade de vogais na frase é: %d\n", vogais);
     
     return 0;
 }
