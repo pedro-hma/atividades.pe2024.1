@@ -4,35 +4,35 @@
 
 #define MAX_LENGTH 80
 
-void encrypt(char *sentence);
+void cripto(char *frase);
 
 int main() {
-    char sentence[MAX_LENGTH + 1]; // +1 for null terminator
+    char frase[MAX_LENGTH + 1]; // +1 for null terminator
     printf("Digite uma frase de no máximo 80 caracteres: ");
-    fgets(sentence, sizeof(sentence), stdin);
+    fgets(frase, sizeof(frase), stdin);
     
     // Remover o caractere de nova linha adicionado pelo fgets
-    sentence[strcspn(sentence, "\n")] = '\0';
+    frase[strcspn(frase, "\n")] = '\0';
     
-    encrypt(sentence);
+    cripto(frase);
     
-    printf("Frase criptografada: %s\n", sentence);
+    printf("Frase criptografada: %s\n", frase);
     
     return 0;
 }
 
-void encrypt(char *sentence) {
-    int length = strlen(sentence);
+void cripto(char *frase) {
+    int caracter = strlen(frase);
     // Inverter a frase
-    for (int i = 0; i < length / 2; i++) {
-        char temp = sentence[i];
-        sentence[i] = sentence[length - 1 - i];
-        sentence[length - 1 - i] = temp;
+    for (int i = 0; i < caracter / 2; i++) {
+        char temp = frase[i];
+        frase[i] = frase[caracter - 1 - i];
+        frase[caracter - 1 - i] = temp;
     }
-    for (int i = 0; i < length; i++) {
-        char c = tolower(sentence[i]);
+    for (int i = 0; i < caracter; i++) {
+        char c = tolower(frase[i]);
         if (c >= 'a' && c <= 'z' && c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u') {
-            sentence[i] = '#';
+            frase[i] = '#';
         }
     }
 }
