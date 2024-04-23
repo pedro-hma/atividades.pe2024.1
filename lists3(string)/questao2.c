@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_LENGTH 100
+#define MAX_caracter 100
 
-void encrypt(char *sentence);
+void cripoto(char *frase);
 
 int main() {
-    char sentence[MAX_LENGTH + 1];
+    char frase[MAX_caracter + 1];
     printf("Digite uma frase de no máximo 100 caracteres: ");
-    fgets(sentence, sizeof(sentence), stdin);
+    fgets(frase, sizeof(frase), stdin);
 
-    sentence[strcspn(sentence, "\n")] = '\0';
+    frase[strcspn(frase, "\n")] = '\0';
 
-    encrypt(sentence);
+    cripoto(frase);
     
-    printf("Frase invertida: %s\n", sentence);
+    printf("Frase invertida: %s\n", frase);
     
     return 0;
 }
 
-void encrypt(char *sentence) {
-    int length = strlen(sentence);
-    for (int i = 0; i < length / 2; i++) {
-        char temp = sentence[i];
-        sentence[i] = sentence[length - 1 - i];
-        sentence[length - 1 - i] = temp;
+void cripoto(char *frase) {
+    int caracter = strlen(frase);
+    for (int i = 0; i < caracter / 2; i++) {
+        char temp = frase[i];
+        frase[i] = frase[caracter - 1 - i];
+        frase[caracter - 1 - i] = temp;
     }
 }
