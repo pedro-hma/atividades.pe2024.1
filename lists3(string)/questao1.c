@@ -4,23 +4,23 @@
 
 #define MAX_LENGTH 80
 
-void encrypt(char *sentence);
+void cripto(char *frase);
 
 int main() {
-    char sentence[MAX_LENGTH + 1];
+    char frase[MAX_LENGTH + 1];
     printf("Digite uma frase de no máximo 80 caracteres: ");
-    fgets(sentence, sizeof(sentence), stdin);
-    sentence[strcspn(sentence, "\n")] = '\0';
-    encrypt(sentence);
-    printf("Frase criptografada: %s\n", sentence);   
+    fgets(frase, sizeof(frase), stdin);
+    frase[strcspn(frase, "\n")] = '\0';
+    cripto(frase);
+    printf("Frase criptografada: %s\n", frase);   
     return 0;
 }
 
-void encrypt(char *sentence) {
-    for (int i = 0; sentence[i] != '\0'; i++) {
-        char c = tolower(sentence[i]);
+void cripto(char *frase) {
+    for (int i = 0; frase[i] != '\0'; i++) {
+        char c = tolower(frase[i]);
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-            sentence[i] = '*';
+            frase[i] = '*';
         }
     }
 }
