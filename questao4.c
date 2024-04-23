@@ -2,31 +2,31 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAX_LENGTH 50
+#define MAX_VOGAIS 50
 
-int count_vowels(char *sentence);
+int count_vowels(char *frase);
 
 int main() {
-    char sentence[MAX_LENGTH + 1]; // +1 for null terminator
+    char frase[MAX_VOGAIS + 1]; // +1 for null terminator
     printf("Digite uma frase de no máximo 50 caracteres: ");
-    fgets(sentence, sizeof(sentence), stdin);
+    fgets(frase, sizeof(frase), stdin);
     
     // Remover o caractere de nova linha adicionado pelo fgets
-    sentence[strcspn(sentence, "\n")] = '\0';
+    frase[strcspn(frase, "\n")] = '\0';
     
-    int vowels = count_vowels(sentence);
+    int vowels = count_vowels(frase);
     
     printf("A quantidade de vogais na frase é: %d\n", vowels);
     
     return 0;
 }
-int count_vowels(char *sentence) {
-    int count = 0;
-    for (int i = 0; sentence[i] != '\0'; i++) {
-        char c = tolower(sentence[i]);
+int count_vowels(char *frase) {
+    int qtd = 0;
+    for (int i = 0; frase[i] != '\0'; i++) {
+        char c = tolower(frase[i]);
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-            count++;
+            qtd++;
         }
     }
-    return count;
+    return qtd;
 }
