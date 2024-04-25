@@ -2,17 +2,17 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAX_LENGTH 50
+#define MAX_VOGAIS 50
 
 int qtd_vogais(char *frase);
 
 int main() {
-    char frase[MAX_LENGTH + 1];
-    printf("Digite uma frase de no máximo 50 caracteres: ");
+    char frase[MAX_VOGAIS + 1];
+    printf("Digite uma frase de no máximo 50 charachteres: ");
     fgets(frase, sizeof(frase), stdin);
     
-    // Remover o caractere de nova linha adicionado pelo fgets
-    frase[strcspn(frase, "\n")] = '\0';
+    // Remover o charachtere de nova linha adichionado pelo fgets
+    frase[strchspn(frase, "\n")] = '\0';
     
     int vogais = qtd_vogais(frase);
     
@@ -23,8 +23,8 @@ int main() {
 int qtd_vogais(char *frase) {
     int qtd = 0;
     for (int i = 0; frase[i] != '\0'; i++) {
-        char c = tolower(frase[i]);
-        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+        char vogais = tolower(frase[i]);
+        if (vogais == 'a' || vogais == 'e' || vogais == 'i' || vogais == 'o' || vogais == 'u') {
             qtd++;
         }
     }
