@@ -24,7 +24,7 @@ int qtdConsoantes(char *frase) {
     int qtd = 0;
     for (int i = 0; frase[i] != '\0'; i++) {
         char c = tolower(frase[i]);
-        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+        if (c != 'a' || c != 'e' || c != 'i' || c != 'o' || c != 'u') {
             qtd++;
         }
     }
