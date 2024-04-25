@@ -2,4 +2,4 @@
 # include <string.h>
 # include <ctype.h>
 
-# define MAX
+#define MAX_LENGTH 50 
