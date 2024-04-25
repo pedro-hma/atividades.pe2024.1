@@ -7,7 +7,7 @@
 void cripto(char *frase);
 
 int main() {
-    char frase[MAX_LENGTH + 1]; // +1 for null terminator
+    char frase[MAX_LENGTH + 1];
     printf("Digite uma frase de no máximo 80 caracteres: ");
     fgets(frase, sizeof(frase), stdin);
     
