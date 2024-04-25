@@ -1,30 +1,18 @@
-# include <stdio.h>
-# include <string.h>
-# include <ctype.h>
+#include <stdio.h>
+#include <string.h>
 
-#define MAX_LENGTH 50 
+int main() {
+    char f1[50], f2[50];
 
-// declarando um função de concatanação
-int concatena(char *frase1,char *frase2);
-int main(){
-    char frase1[MAX_LENGTH + 1];
-    printf("Digite uma frase de no máximo 50 caracteres: ");
-    fgets(frase1, sizeof(frase1), stdin);
-    
-    // Remover o caractere de nova linha adicionado pelo fgets
-    frase1[strcspn(frase1, "\n")] = '\0';
-    
-    int c = qtdcaracter(frase1);
+    printf("Digite a primeira string: ");
+    scanf("%s", f1);
 
-    char frase2[MAX_LENGTH + 1];
-    printf("Digite uma frase de no máximo 50 caracteres: ");
-    fgets(frase2, sizeof(frase2), stdin);
-    
-    printf("Concatenação das frases 1 e 2: %d\n",frase1,frase2);
-    
+    printf("Digite a segunda string: ");
+    scanf("%s", f2);
+
+    strcat(f1, f2); // Concatena str2 ao final de str1
+
+    printf("As strings concatenadas são: %s\n", f1);
+
     return 0;
-}
-// definindo a função de concatenação
-int concatena(char *frase1,char *frase2){
-    
 }
