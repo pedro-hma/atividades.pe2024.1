@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAX_VOGAIS 50
+#define MAX_LENGTH 50
 
 int qtd_vogais(char *frase);
 
