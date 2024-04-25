@@ -4,7 +4,7 @@
 
 #define MAX_LENGTH 100 
 
-int qtdConsoantes(char * frase);
+int qtdcaracter(char * frase);
 
 int main(){
     char frase[MAX_LENGTH + 1];
@@ -14,13 +14,13 @@ int main(){
     // Remover o caractere de nova linha adicionado pelo fgets
     frase[strcspn(frase, "\n")] = '\0';
     
-    int c = qtdConsoantes(frase);
+    int c = qtdcaracter(frase);
     
     printf("A quantidade de consoantes na frase é: %d\n", c);
     
     return 0;
 }
-int qtdConsoantes(char *frase) {
+int qtdcaracter(char *frase) {
     int qtd = 0;
     for (int i = 0; frase[i] != '\0'; i++) {
         char c = tolower(frase[i]);
