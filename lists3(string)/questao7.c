@@ -5,9 +5,10 @@
 #define MAX_LENGTH 50 
 
 // declarando um função de concatanação
+int concatena(char *frase1,char *frase2);
 int main(){
     char frase1[MAX_LENGTH + 1];
-    printf("Digite uma frase1 de no máximo 50 caracteres: ");
+    printf("Digite uma frase de no máximo 50 caracteres: ");
     fgets(frase1, sizeof(frase1), stdin);
     
     // Remover o caractere de nova linha adicionado pelo fgets
@@ -24,3 +25,6 @@ int main(){
     return 0;
 }
 // definindo a função de concatenação
+int concatena(char *frase1,char *frase2){
+    
+}
