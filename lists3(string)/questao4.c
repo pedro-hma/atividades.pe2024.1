@@ -4,10 +4,10 @@
 
 #define MAX_VOGAIS 50
 
-int count_vowels(char *frase);
+int qtd_vogais(char *frase);
 
 int main() {
-    char frase[MAX_VOGAIS + 1]; // +1 for null terminator
+    char frase[MAX_VOGAIS + 1];
     printf("Digite uma frase de no máximo 50 caracteres: ");
     fgets(frase, sizeof(frase), stdin);
     
@@ -20,7 +20,7 @@ int main() {
     
     return 0;
 }
-int count_vowels(char *frase) {
+int qtd_vogais(char *frase) {
     int qtd = 0;
     for (int i = 0; frase[i] != '\0'; i++) {
         char c = tolower(frase[i]);
